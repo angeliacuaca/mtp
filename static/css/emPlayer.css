@@ -1,0 +1,318 @@
+
+#emPlayer{
+    background-color: lightgray;
+      width: 100% !important;
+     position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px;
+    margin: 0 auto !important;
+/*     height: 60px; */
+    display: block;
+}
+
+
+#emPlayer .btn-group.col-xs-5.col-sm-2{
+     border: none;
+    float: left;
+    display: block;
+    width: 16%;
+}
+ #emPlayer .btn-group.col-xs-5.col-sm-2 button{
+      background-color: transparent;
+     height: 30px;
+     width:30px;
+}
+
+ #emPlayer .btn-group.col-xs-5.col-sm-2 button:hover{
+      opacity: 0.65;
+}
+
+#emPlayer .col-xs-7.col-sm-10{
+/*     clear: both; */
+    display: block;
+width: 80%;
+    float: left;
+    margin-left: 20px;
+}
+
+#trackInfo{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#currentTime{
+    float: left;
+}
+#duration{
+    float: right;
+}
+
+
+#emPlayer #seekBar{
+    float: left;
+/*     width: 100% !important; */
+}
+
+
+#emPlayer .col-xs-9.col-sm-11{
+float: left;
+    margin-left: 20px;
+    width: 90%;
+}
+
+#emPlayer .col-xs-3.col-sm-1{
+    float: left;
+}
+
+#trackCover{
+    height: 65px;
+    width: 65px;
+}
+
+#playList{
+    background-color: transparent;
+    padding: 5px;
+    margin: auto;
+}
+
+#loopBtn{
+    border: 0px;
+    height: 18px;
+    width: 18px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/UnloopIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#playBtn{
+    border: none;
+    height: 18px;
+    width: 18px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/PlayIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn.btn-group.col-xs-5.col-sm-2:hover{
+    background: transparent;
+}
+
+/* #playBtn:hover, #muteBtn:hover{
+      opacity: 0.65;
+} */
+
+#muteBtn{
+    border: none;
+    height: 18px;
+    width: 18px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/SpeakerIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#listBtn{
+    border: none;
+    height: 18px;
+    width: 18px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/ListIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#loopBtn:active, #playBtn:active, #muteBtn:active, #listBtn:active{
+    position: relative;
+    top: 2px;;
+}
+
+#searchResult{
+    z-index: 100;
+}
+
+.intro #emPlayer{
+    background-color:#282828;
+    padding: 20px;
+    position: relative;
+    z-index: 1000;
+    width: 70%;
+      height: 180px;
+}
+
+.intro #playBtn{
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/PlayIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.intro #muteBtn{
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("/static/images/green/SpeakerIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.intro #emPlayer .btn-group.col-xs-5.col-sm-2{
+     border: none;
+    float: none;
+    margin: 0 auto;
+}
+
+.intro #emPlayer #trackInfo{
+    color: transparent;
+}
+
+.intro #emPlayer .col-xs-9.col-sm-11{
+float: none;
+}
+
+
+.intro #emPlayer .col-xs-7.col-sm-10{
+    clear: both;
+    display: block;
+width: 100%;
+ padding: 10px;
+}
+
+@media screen and (max-width: 37.5em) {
+
+    .intro #emPlayer{
+        height: 230px;
+    }
+
+    .intro #muteBtn, .intro #playBtn{
+        height: 50px!important;
+        width: 50px !important;
+       margin:-5px 5px;
+    }
+}
+
+
+
+
+
+
+#pocket-player .btn-group.col-xs-5.col-sm-2{
+     border: none;
+    float: left;
+    display: block;
+/*     width: 16%; */
+    position: relative;
+  bottom: 10px;
+}
+ #pocket-player .btn-group.col-xs-5.col-sm-2 button{
+      background-color: transparent;
+     height: 40px;
+     width:40px;
+
+}
+
+ #pocket-player .btn-group.col-xs-5.col-sm-2 button:hover{
+      opacity: 0.65;
+}
+#pocket-player #trackInfo{
+    font-size: 18px;
+}
+#pocket-player .col-xs-7.col-sm-10{
+/*     clear: both; */
+    display: block;
+width: 80%;
+    float: left;
+    margin-left: 20px;
+}
+
+#pocket-player #seekBar{
+    float: left;
+/*     width: 100% !important; */
+}
+
+#pocket-player .col-xs-9.col-sm-11{
+float: left;
+    margin-left: 20px;
+    width: 90%;
+
+}
+
+#pocket-player .col-xs-3.col-sm-1{
+    float: left;
+}
+
+#pocket-player .playlist-area{
+    max-height: 100px !important;
+    overflow-y: scroll;
+     bottom: 40px;
+    z-index: 1500;
+    position: relative;
+    margin-bottom: 0px;
+       background-color: lightgray;
+       width: 100% !important;
+    border: 1.5px dashed;
+     border-color: #6bbe98 !important;
+}
+
+#pocket-player .playlist-area li{
+ float: left;
+    clear: left;
+    border: 1.5px solid white !important;
+    width: 100% !important;
+    max-height: 40px;
+    margin-top: 5px !important;
+    padding: 5px 10px 5px 10px;
+    text-align: left;
+color: black;
+}
+
+ #pocket-player .playlist-area li:hover{
+     cursor: pointer !important;
+/*     border-width: 2px !important; */
+    border: 2px solid darkgray !important;
+    opacity: 0.7;
+}
+
+#pocket-player{
+        z-index: 1000;
+
+      width: 100% !important;
+}
+
+#pocket-player .songp{
+    padding: 10px;
+/*     padding-top: 20px !important; */
+    display: block;
+    bottom:40px;
+    position: relative;
+}
+
+#content .songp{
+    display: none;
+}
+
+#pocket-player .player-area{
+      background-color: lightgray;
+     position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 10px 0px 10px;
+    display: block;
+    height: 90px;
+}

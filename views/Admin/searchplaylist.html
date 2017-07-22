@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/forgotpassword.js"></script>
+    <script type="text/javascript">
+        var playlist, asc1 = 1,
+                asc2 = 1,
+                asc3 = 1;
+        window.onload = function () {
+            playlist = document.getElementById("playlist");
+        }
+
+        function sort_table(tbody, col, asc) {
+            var rows = tbody.rows,
+                    rlen = rows.length,
+                    arr = new Array(),
+                    i, j, cells, clen;
+            // fill the array with values from the table
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                arr[i] = new Array();
+                for (j = 0; j < clen; j++) {
+                    arr[i][j] = cells[j].innerHTML;
+                }
+            }
+            // sort the array by the specified column number (col) and order (asc)
+            arr.sort(function (a, b) {
+                return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
+            });
+            // replace existing rows with new rows created from the sorted array
+            for (i = 0; i < rlen; i++) {
+                rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>searchplaylist</title>
+</head>
+<body style="background: #f1f3f3">
+<div class="container">
+    <h3>Please type in a keyword and search it, then related tracks and users will be listed below: </h3>
+</div>
+<div class="container">
+    <form accept-charset="UTF-8" action="/admin/searchplaylist" enctype="multipart/form-data" method="post"
+          novalidate="novalidate">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" name="keywords" class="form-control" placeholder="Leave this blank and search will list all the existing tracks">
+                    <span class="input-group-btn">
+                         <button class="btn btn-default" type="submit">Search</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </form>
+</div>
+<div class="container">
+    <br>
+        <h3>{{infor_message}}</h3>
+    <table id="playlist_table" class="table">
+        <thead>
+        <tr>
+            {%for alltrack in alltracklist%}
+            {%if loop.index == 1%}
+            <th>No.</th>
+            {% for type,val in alltracklist[alltrack].items() %}
+            {% for key,value in val.items() %}
+            <th onclick="sort_table(playlist, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">{{key}}</th>
+            {%endfor%}
+            {%endfor%}
+            {%endif%}
+            {%endfor%}
+        </tr>
+        </thead>
+        <tbody id="playlist">
+        {%for alltrack in alltracklist%}
+        <tr>
+            <td>{{loop.index}}:</td>
+            {% for type,val in alltracklist[alltrack].items() %}
+            {% for key,value in val.items() %}
+            <td>
+                <b>{{value}}</b>
+            </td>
+            {%endfor%}
+
+            {% endfor %}
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
